@@ -1,0 +1,87 @@
+﻿1
+
+
+a)- Call by Value ve Call by Reference temelde iki farklı fonksiyon çağırma yöntemidir.
+
+
+Call by Value: 
+Tanımladığımız bir değişkenin kodun çalışması sonucu çıktı olarak başta tanımladığımız 
+değeri döndürme durumudur. Bunun nedeni fonksiyonun değişken için geçici bir nesne oluşturmasıdır. Geçici bir 
+nesne oluşturulduğunda bizim değişkenimize atadığımız değer geçici nesneye de atanır. Dolayısıyla fonksiyonun 
+parametresinin değeri ile bizim fonksiyona geçtiğimiz değişkenin değeri aynı olur. Fakat bu iki nesne aynı nesneler 
+değildir. Bellekte iki tane birbirinden farklı ancak aynı değere sahip nesne vardır. bu durum Call by Value
+(Değer ile çağırma)olarak adlandırılır.
+
+
+Call by Reference:
+Çağrılan program argüman olarak bir değer yerine bu değere ait bellek adresi gönderir. Böylece veri paylaşımı, 
+değerler yerine adreslerle gerçekleştirilir. Bu durumda argüman ile buna karşı gelen fonksiyon parametresi aynı 
+bellek alanını kullanır. Bunun sonucunda çağrılan fonksiyonda bu şekilde kullanılan bir parametredeki değişiklik
+buna karşı gelen çağrılan program argümanına aynen eklenecektir.
+
+
+Call by Value ve Call by Reference Farkları
+
+
+Call by Value de bir değişken değeri için geçici bir nesne oluşturulur. Fonksiyon bu nesneye değişken değerinin
+aynısını atar ve fonksiyon içerisindeki tüm işlemleri bu geçici nesne üzerinde gerçekleşir. Ancak işlemler sona
+erdiğinde  bu geçici nesne ortadan kaldırılır ve elimizde yine baştaki nesnemiz yani bizim atadığımız değer kalır. 
+Bir diğer deyişle çıktımız başlangıçtaki değer ile aynı olur. Call by Referencede ise fonksiyona nesnenin değerini 
+değil referansı yani adresi gönderilir. Böylece fonksiyon nesnenin bellekteki konumuna giderek işlemleri bizzat 
+orada yapacak ve istediğimiz işlemler sonrasında çıkan değeri sonuç olarak döndürebilecektir.
+--------------------------------------------------------------------------------------------------------------------------
+b) 
+
+Map:
+Kendisine parametre olarak gönderilen dizinin her bir elemanını belirlenen işleme tabi tutup yeni bir dizi 
+meydana getirir.
+
+
+Reduce:
+Dizinin her değeri için bir işlev yürüttükten sonra diziyi tek bir değere indirger.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+c)
+
+Static Değişken:
+
+
+Bir fonksiyonun içerisinde bir statik değişken tanımladığımızda bu değişken ramde bir kere oluşturulur ve değer 
+sürekli güncellenir.
+
+
+static $a = 5; -> static değişken
+
+
+
+
+
+
+
+
+Static Metod:
+
+
+function say                        
+{                                
+        static $a =5;
+echo $a . “<br />”;
+$a++;
+}
+say();
+say();
+
+
+Yukarıdaki kodumuzda eğer $a değişkenini static olarak tanımlamasaydık $a değişkenini “$a++” kısmında arttırmış
+olmamıza rağmen çıktımız aşağıdaki gibi olacaktı:
+5
+5
+
+
+Ancak değişkenimizi static olarak tanımladığımızda, değişkenimize atanan değer artık sistemde kaydedilmiştir. 
+Bundan sonra yapılacak işlemler kaydedilen mevcud değerin üzerinden yapılacağı için yukarıda kodumuzun çıktısı 
+değişkenimizi static olarak belirttiğimiz için  aşağıdaki gibi olacaktır.
+5
+6
+Yukarıdaki kod static metod kullanımına örnektir.
